@@ -1,4 +1,5 @@
 import makeStack from '../src/stack.js';
+import _ from 'lodash';
 
 test('stack\'s main flow', () => {
   const stack = makeStack();
@@ -26,3 +27,35 @@ test('pop in empty stack', () => {
   expect(() => stack.pop()).toThrow();
 });
 
+//-----избавляемся от дублирования данных для теста-----
+
+const coll = ['One', true, 3, 10, 'cat', {}, '', 10, false];
+
+test ('includes', () => {
+  expect(_.includes(coll,3) ).toBe(true);
+  expect(_.includes(coll,11) ).toBe(false);
+});
+
+//---- инициализируем перед каждым тестом а не при объявлении
+
+//let now = Date.now(); даст один результат для разного времени тестов
+
+let now;
+
+beforeEach (() => {
+  now = Date.now();
+});
+
+test ('first example', () => console.log(now));
+test ('second example', () => console.log(now));
+
+//---- инициализируем перед всеми тестами одновременно а не при объявлении
+
+let nowAll;
+
+beforeEach (() => {
+  nowAll = Date.now();
+});
+
+test ('first example', () => console.log(nowAll));
+test ('second example', () => console.log(nowAll));

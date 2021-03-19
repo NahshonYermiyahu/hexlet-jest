@@ -1,4 +1,6 @@
 export default str => str
- .split('')
- .reverse()
- .join('');
+  .split('')
+  .reverse()
+  .join('');
+
+ //rrrrrrrr
