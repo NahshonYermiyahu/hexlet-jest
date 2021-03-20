@@ -3,4 +3,3 @@ export default str => str
   .reverse()
   .join('');
 
- //rrrrrrrr
